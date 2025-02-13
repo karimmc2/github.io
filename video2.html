@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vuelve a intentarlo</title>
+    <title>Video 2</title>
     <style>
         body, html {
             height: 100%;
@@ -17,7 +17,7 @@
         .video-container {
             position: relative;
             width: 100%;
-            max-width: 360px;
+            max-width: 360px; /* Ajusta según el ancho deseado, manteniendo el aspect ratio */
             padding-bottom: 177.78%; /* 9:16 aspect ratio */
             overflow: hidden;
         }
@@ -46,18 +46,11 @@
 <body>
     <!-- Video 2 -->
     <div class="video-container">
-        <video width="100%" height="100%" controls muted>
-            <source src="video1.mp4" type="video/mp4">
+        <video width="100%" height="100%" controls>
+            <source src="https://karimmc2.github.io/github.io/video1.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de este video.
         </video>
     </div>
     <button id="retryButton" onclick="location.href='index.html';">Volver a intentar</button>
-    <script>
-        // Para activar el sonido si el usuario interactúa con la página
-        window.addEventListener('load', () => {
-            document.querySelector('video').muted = false;
-            document.querySelector('video').play();
-        });
-    </script>
 </body>
 </html>

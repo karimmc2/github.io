@@ -1,81 +1,25 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Autoplay</title>
+    <title>Inicio</title>
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-            flex-direction: column;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 360px; /* Ajusta según el ancho deseado, manteniendo el aspect ratio */
-            padding-bottom: 177.78%; /* 9:16 aspect ratio */
-            overflow: hidden;
-        }
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .button-container {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            max-width: 360px;
-            margin-top: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 24px;
-            font-weight: bold;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-        #noButton {
-            background-color: red;
-        }
-        #yesButton {
-            background-color: green;
-        }
-        #retryButton {
-            background-color: green;
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+        body { text-align: center; background-color: #000; color: white; font-family: Arial, sans-serif; }
+        video { width: 80%; max-width: 800px; margin-top: 20px; }
+        .button { font-size: 24px; font-weight: bold; color: white; padding: 15px 30px; margin: 20px; border: none; cursor: pointer; display: inline-block; }
+        .no { background-color: red; }
+        .yes { background-color: green; }
     </style>
 </head>
 <body>
-    <!-- Video 1 -->
-    <div class="video-container">
-        <video width="100%" height="100%" autoplay muted>
-            <source src="index.mp4" type="video/mp4">
-            Tu navegador no soporta la reproducción de este video.
-        </video>
-    </div>
-    <div class="button-container">
-        <button id="noButton" onclick="location.href='video2.html';">No</button>
-        <button id="yesButton" onclick="location.href='video3.html';">Sí</button>
-    </div>
-    <script>
-        // Para activar el sonido si el usuario interactúa con la página
-        document.body.addEventListener('click', () => {
-            document.querySelector('video').muted = false;
-        });
-    </script>
+    <video controls autoplay>
+        <source src="index.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+    <br>
+    <button class="button no" onclick="location.href='no.html'">No</button>
+    <button class="button yes" onclick="location.href='si.html'">Sí</button>
 </body>
 </html>
-
